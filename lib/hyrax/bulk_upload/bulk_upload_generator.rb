@@ -16,14 +16,14 @@ module Hyrax
 		end
 
 		def get_prop_names
-			gross_array = []
+			prop_names = []
 			 get_writable_fields.each do |line|
 				 prop = {}
 				 prop[:name] =  line.split(',').first
 				 prop[:multiple] = line.split('multiple: ')[1].split(' ').first
-				 gross_array << prop
+				 prop_names << prop
 			 end
-			gross_array
+			prop_names
 		end
 
 		def generate_write_method
